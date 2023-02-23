@@ -4,7 +4,13 @@ let url = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 
 let userInput = document.getElementById("user-input").value;
 
-fetch(url + "pumpkin").then((response) => response.json())
+searchBtn.addEventListener("click", () => {
+    let userInput = document.getElementById("user-input").value;
+    if (userInput.length == 0) {
+        result.innerHTML = `<h3>Input Field Cannot be Empty</h3>`;
+    }
+    else {
+        fetch(url + userInput).then((response) => response.json())
 .then((data) => {
     let myMeal = data.meals[0];
     console.log(myMeal);
@@ -52,4 +58,14 @@ fetch(url + "pumpkin").then((response) => response.json())
         parent.appendChild(child);
         ingredientContainer.appendChild(parent);
       });
+
+    showRecipe.addEventListener("click", () => {
+        recipe.style.display = "block";
+    });
+
+    hideRecipe.addEventListener("click", () => {
+        recipe.style.display = "none";
+    });
+});
+    }
 });
