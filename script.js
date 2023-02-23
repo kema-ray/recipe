@@ -66,6 +66,12 @@ searchBtn.addEventListener("click", () => {
         hideRecipe.addEventListener("click", () => {
             recipe.style.display = "none";
         });
+     })
+     .catch(() => {
+        result.innerHTML = `<h3>Invalid Input</h3>`;
       });
     }
+    // if (userInput.length == none) {
+    //     result.innerHTML = `<h3>No such input</h3>`;
+    // }
 });
