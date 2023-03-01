@@ -68,7 +68,7 @@ searchBtn.addEventListener("click", () => {
         });
      })
      .catch(() => {
-        result.innerHTML = `<h3>Invalid Input</h3>`;
+        result.innerHTML = `<h3>No such meal found</h3>`;
       });
     }
     // if (userInput.length == none) {
